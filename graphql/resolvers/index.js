@@ -45,7 +45,7 @@ module.exports = {
             throw new Error("Not Found User");
         }
         // const isValidPassword = await verifyPassword(user.password, parent.user.password);
-        const isValidPassword = await verifyPassword('$argon2id$v=19$m=65536,t=3,p=4$Id7oqXo47bKtzmuuTP+Zsw$Ju2Ac05rMCtPqHv7VQu5TRwDps/bh+lFhyYnehxou68', parent.input.password);
+        const isValidPassword = await verifyPassword(user.password, parent.input.password);
         if (!isValidPassword) {
             throw new Error("Invalid password");
         }
